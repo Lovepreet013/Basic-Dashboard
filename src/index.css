@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+NSW:wght@100..400&display=swap');
+
+*{
+    font-family: "Inter", sans-serif;
+}
+
+
+body{
+    background-color: #EDF1F7;
+}
+
+.btn{
+    @apply border-2 border-[#dce3fc] bg-white px-2 rounded cursor-pointer
+}
+
+.hover{
+    @apply  hover:bg-[#e7ebf8]
+}

@@ -1,0 +1,26 @@
+{
+    "categories": [
+      {
+        "id": "cspm",
+        "name": "CSPM Dashboard",
+        "widgets": [
+          { "id": "cloudAccounts", "name": "Cloud Accounts", "component": "Chart" }
+        ]
+      },
+      {
+        "id": "cwpp",
+        "name": "CWPP Dashboard",
+        "widgets": [
+          { "id": "namespaceAlerts", "name": "Top 5 Namespace Specific Alerts", "component": "Chart" }
+        ]
+      },
+      {
+        "id": "registry",
+        "name": "Registry Scan",
+        "widgets": [
+          { "id": "imageRisk", "name": "Image Risk Assessment", "component": "RegistryScan" }
+        ]
+      }
+    ]
+  }
+  
