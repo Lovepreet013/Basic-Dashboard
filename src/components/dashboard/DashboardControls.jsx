@@ -3,9 +3,9 @@ import { Clock4, EllipsisVertical, Plus, RefreshCcw } from "lucide-react";
 const DashboardControls = ({ onAddWidget }) => (
   <div className="flex items-center justify-between py-8">
 
-    <h1 className="font-[700] text-xl">CNAPP Dashboard</h1>
+    <h1 className="font-[700] text-xl ml-2">CNAPP Dashboard</h1>
 
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 mr-2">
 
       <button onClick={onAddWidget} className="flex items-center py-1 text-[#787878] hover btn">
         Add Widget <Plus size={15} className="ml-1" />
