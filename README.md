@@ -1,12 +1,27 @@
-# React + Vite
+# Frontend Trainee Assignment – Dashboard App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Dashboard Screenshot](public/img1.png)
+![Dashboard Screenshot](public/img2.png)
 
-Currently, two official plugins are available:
+This is a **React + Vite** based dashboard project.  
+The app allows users to add/remove widgets dynamically into different dashboard sections using a side drawer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
+- Built with **React + Vite** for fast development.
+- **Redux Toolkit** for state management.
+- Dynamic sections and widgets loaded from JSON config.
+- Side drawer to select and add widgets to specific sections.
+- Responsive layout using **TailwindCSS**.
+- Example widgets:
+  - Donut/Chart widget
+  - Registry Scan widget
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone <your-repo-url>
