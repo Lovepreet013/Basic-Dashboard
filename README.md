@@ -25,3 +25,7 @@ The app allows users to add/remove widgets dynamically into different dashboard 
 ### 1. Clone the Repository
 ```bash
 git clone <your-repo-url>
+
+### 2. Navigate to Project Directory
+```bash
+cd <your-project-folder>
