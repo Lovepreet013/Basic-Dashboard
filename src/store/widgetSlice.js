@@ -1,40 +1,43 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 import dashboardConfig from "../config/dashboardConfig.json";
 
+// Build initial sections with widgets from JSON
+const initialSections = dashboardConfig.categories.reduce((acc, cat) => {
+  acc[cat.id] = {
+    name: cat.name,
+    widgets: cat.widgets.map((w) => ({
+      ...w,
+      instanceId: nanoid(), // give each widget a unique ID
+    })),
+  };
+  return acc;
+}, {});
+
 const initialState = {
-  // Build sections dynamically
-  sections: dashboardConfig.categories.reduce((acc, cat) => {
-    acc[cat.id] = { name: cat.name, widgets: [] };
-    return acc;
-  }, {}),
+  sections: initialSections,
   availableWidgets: dashboardConfig.categories.flatMap((cat) => cat.widgets),
   drawerOpen: false,
   selected: [],
-  targetSection: dashboardConfig.categories[0].id, 
+  targetSection: dashboardConfig.categories[0].id, // default = first section
 };
 
 const widgetsSlice = createSlice({
   name: "widgets",
   initialState,
   reducers: {
-
     toggleDrawer: (state, action) => {
-      // if drawer is currently closed, we are OPENING it
       const opening = !state.drawerOpen;
 
       if (opening) {
-        state.selected = []; // reset selection only when opening
+        state.selected = [];
         const sectionId = action?.payload?.sectionId;
-        // only change targetSection when caller provides one
         if (sectionId) {
           state.targetSection = sectionId;
         }
-        // otherwise, keep whatever was previously selected
       }
 
       state.drawerOpen = !state.drawerOpen;
     },
-
 
     toggleSelection: (state, action) => {
       const id = action.payload;
@@ -51,20 +54,20 @@ const widgetsSlice = createSlice({
 
     addSelectedWidgets: (state) => {
       if (!state.targetSection) return;
-    
+
       const section = state.sections[state.targetSection];
       if (!section) return;
-    
+
       state.selected.forEach((widgetId) => {
         const widgetDef = state.availableWidgets.find((w) => w.id === widgetId);
         if (widgetDef) {
           section.widgets.push({
             ...widgetDef,
-            instanceId: Date.now().toString(),
+            instanceId: nanoid(),
           });
         }
       });
-    
+
       state.selected = [];
       state.drawerOpen = false;
     },
